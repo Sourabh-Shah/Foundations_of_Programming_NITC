@@ -1,0 +1,41 @@
+
+Division by Repeated Subtraction
+=======================================
+
+RepeatedSubtracion(dividend, divider){
+	if dividend < 0 :
+		return ERROR
+	if divider <= 0 :
+		return ERROR
+	quotient <- 0					/* '<-' means assignment operator */
+	while (dividend >= divider):
+		quotient++
+		dividend <- dividend - divider
+	reminder <- dividend
+	print("quotient =" + quotient)
+	print("reminder =" + reminder)
+}
+
+
+
+Java Implementation
+=========================
+
+public static void RepeatedSubtraction(int dividend, int divider){
+	if (dividend < 0){
+		System.out.print("ERROR : dividend is less than zero");
+		return;
+	}
+	if (divider <= 0){
+		System.out.println("ERROR : divider is less than or equal to zero");
+		return;
+	}
+	int quotient = 0, reminder = 0;
+	while(dividend >= divider){
+		quotient++;
+		dividend -= divider;
+	}
+	reminder = dividend;
+	System.out.println("Quotient ="+ quotient);
+	System.out.println("Reminder ="+ reminder);
+}
